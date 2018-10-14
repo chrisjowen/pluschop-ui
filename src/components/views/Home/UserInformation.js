@@ -16,7 +16,7 @@ class UserInformation extends Component {
                 <p>{user.email}</p>
                 <LogOut>
                     {
-                        logOutFunc => <a onClick={logOutFunc} href="">logout</a>
+                        logOutFunc => <a onClick={logOutFunc} href="javascript:void(0)">logout</a>
                     }
                 </LogOut>
             </div>
