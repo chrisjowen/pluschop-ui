@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+
+import { Provider } from 'react-redux';
+
 import Home from './views/Home';
+
+import store from './store';
 
 class App extends Component {
     render() {
         return (
-            <div>
+            <Provider store={store}>
                 <Home />
-            </div>
+            </Provider>
         )
     }
 }

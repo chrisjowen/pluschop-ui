@@ -6,21 +6,38 @@ export default class PinterestLogin extends Component {
 
     componentDidMount () {
 
-        console.log(window.PDK)
-
         if(window.PDK) {
+
             window.PDK.init({
-                appId: pinterestAppID, // Change this
-                cookie: true
+                appId: pinterestAppID
             });
 
-            
         }
 
     }
 
+    signIn = () => {
+
+        const { onSuccess = () => {} } = this.props
+
+        window.PDK.login(
+            { scope: 'read_public' },
+            () => {
+
+                window.PDK.me(
+                    ``,
+                    {
+                        fields: ['first_name', 'last_name', 'image', 'username']
+                    },
+                    onSuccess
+                )
+
+            }
+        )
+    }
+
     render () {
-        return <div onClick={() => window.PDK.login({ scope: 'read_public' }, (hello) => {console.log(hello)})}>click</div>
+        return null
     }
 
 }
