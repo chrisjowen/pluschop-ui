@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import QuickCommitment from '../components/views/Home/QuickCommitment';
+import SocialLogin from '../components/views/Home/SocialLogin';
 
 export default class Home extends Component {
 
@@ -12,6 +13,7 @@ export default class Home extends Component {
                 className="Home"
             >
                 <QuickCommitment />
+                <SocialLogin />
             </div>
 
         )

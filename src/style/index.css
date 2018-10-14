@@ -1,2 +1,10 @@
 @import url('~semantic-ui-css/semantic.min.css');
 @import url('~react-datetime/css/react-datetime.css');
+
+.social-login-button {
+    margin-bottom: 20px;
+}
+
+.social-login-button button {
+    min-width: 250px;
+}

@@ -19,7 +19,7 @@ class QuickCommitment extends Component {
     render () {
 
         const { commitment_type = 1, commitment_item = '', commitment_date_dropdown = 3 } = this.state
-                                                       
+
         return (
 
             <div>
@@ -45,7 +45,7 @@ class QuickCommitment extends Component {
                 />
                 {
                     commitment_date_dropdown == 'specific_date' ?
-                        <DateTime />                          
+                        <DateTime />
                     : null
                 }
             </div>
