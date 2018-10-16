@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import QuickCommitment from '../components/views/Home/QuickCommitment';
@@ -38,7 +39,7 @@ class Home extends Component {
             >
                 <QuickCommitment />
                 {
-                    isLoggedIn() ? this.props.history.push('/commitments/:id') : <SocialLogin onLogin={this.onLogin} />
+                    isLoggedIn() ? <Redirect to={'/commitments/1'} /> : <SocialLogin onLogin={this.onLogin} />
                 }
             </div>
 
