@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import QuickCommitment from '../components/views/Home/QuickCommitment';
 import SocialLogin from '../components/views/Home/SocialLogin';
 import UserInformation from '../components/views/Home/UserInformation';
+import Commitments from './Commitments'
 
 import { login } from '../utils/mockAPI/api';
 
@@ -30,9 +31,6 @@ class Home extends Component {
 
     render () {
 
-        const { userData = {} } = this.props.authReducer
-        const { user = {} } = userData
-
         return (
 
             <div
@@ -40,7 +38,7 @@ class Home extends Component {
             >
                 <QuickCommitment />
                 {
-                    isLoggedIn() ? <UserInformation user={user} /> : <SocialLogin onLogin={this.onLogin} />
+                    isLoggedIn() ? this.props.history.push('/commitments/:id') : <SocialLogin onLogin={this.onLogin} />
                 }
             </div>
 

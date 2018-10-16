@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 
 import { setUser } from '../../redux/actions/auth';
 
@@ -11,6 +12,8 @@ class LogOut extends Component {
 
         this.props.dispatch(setUser({}))
 
+        this.props.history.push('/')
+
     }
 
     render () {
@@ -21,6 +24,6 @@ class LogOut extends Component {
 
 }
 
-export default connect(
+export default withRouter(connect(
     ({ dispatch }) => ({ dispatch })
-)(LogOut)
+)(LogOut))
