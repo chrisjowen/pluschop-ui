@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import QuickCommitment from '../components/views/Home/QuickCommitment';
 import SocialLogin from '../components/views/Home/SocialLogin';
 import UserInformation from '../components/views/Home/UserInformation';
-import Commitments from './Commitments'
+import PostContents from '../components/views/Home/PostContents';
 
 import { login } from '../utils/mockAPI/api';
-
 import { isLoggedIn } from '../utils/user';
+import { jsonData } from '../utils/constants';
 
 import { setUser } from '../redux/actions/auth';
 
@@ -32,6 +31,9 @@ class Home extends Component {
 
     render () {
 
+        const { userData = {} } = this.props.authReducer
+        const { user = {} } = userData
+
         return (
 
             <div
@@ -39,8 +41,11 @@ class Home extends Component {
             >
                 <QuickCommitment />
                 {
-                    isLoggedIn() ? <Redirect to={'/commitments/1'} /> : <SocialLogin onLogin={this.onLogin} />
+                    isLoggedIn() ? <UserInformation user={user} /> : <SocialLogin onLogin={this.onLogin} />
                 }
+                <PostContents
+                    data={jsonData}
+                />
             </div>
 
         )

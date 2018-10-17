@@ -6,7 +6,7 @@ import GoogleLogin from 'react-google-login';
 import Hidden from '../../common/Hidden';
 import PinterestLogin from '../../PinterestLogin/PinterestLogin';
 
-import { googleApiKey } from '../../../utils/constants';
+import { googleApiKey, jsonData } from '../../../utils/constants';
 
 export default class SocialLogin extends Component {
 
@@ -59,9 +59,12 @@ export default class SocialLogin extends Component {
 
     render () {
 
+       
+
         return (
 
-            <div>
+            <div className='socialLogin_link'>
+                <div className='loginWith'>
                 <h1>Login</h1>
                 <div className="social-login-button">
                     <FacebookLogin
@@ -104,6 +107,7 @@ export default class SocialLogin extends Component {
                     ref={c => this.pinterestButton = c}
                     onSuccess={this.onPinterestLogin}
                 />
+                </div>
             </div>
         )
 

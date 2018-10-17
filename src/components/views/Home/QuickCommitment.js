@@ -22,7 +22,7 @@ class QuickCommitment extends Component {
 
         return (
 
-            <div>
+            <div className='SelectorHeader'>
                 <span>I want to</span>
                 <Select
                     onChange={this._onChange}

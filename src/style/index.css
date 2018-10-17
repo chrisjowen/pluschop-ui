@@ -7,4 +7,28 @@
 
 .social-login-button button {
     min-width: 250px;
+}	
+
+.SelectorHeader {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.socialLogin_link {
+    width: 100%;
+    float: left;
+}
+
+.ui.justified.container {
+    padding: 9px 13px;
+  }
+
+ .loginWith {
+    justify-content: center;
+    display: grid;
+}
+
+.Item_component {
+    margin-bottom: 20px;
 }
